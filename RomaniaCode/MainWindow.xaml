@@ -8,17 +8,17 @@
         Title="Уникальный идентификационный номер Румынии" Height="450" Width="800" MinHeight="300" MinWidth="400">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="200">
-            <TextBlock Text="Фамилия:"/>
+            <TextBlock Text="Фамилия:" x:Name="SurnameTextBlock"/>
             <TextBox/>
             <GroupBox Header="Ваш пол:">
                 <StackPanel Orientation="Horizontal">
-                    <RadioButton Content="Мужчина"/>
-                    <RadioButton Content="Женщина"/>
+                    <RadioButton Content="Мужчина" x:Name="ManMomentRadio" GroupName="Gender"/>
+                    <RadioButton Content="Женщина" x:Name="WomenMomentRadio" GroupName="Gender"/>
                 </StackPanel>
             </GroupBox>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Дата рождения:"/>
-                <DatePicker/>
+                <DatePicker x:Name="DateofBirthDatePicker"/>
             </StackPanel>
             <GroupBox Header="Вы резидент Румынии ?">
                 <StackPanel Orientation="Horizontal">
@@ -28,9 +28,9 @@
             </GroupBox>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Ваш город:"/>
-                <ComboBox/>
+                <ComboBox x:Name="CityComboBox" Width="100"/>
             </StackPanel>
-            <Button Content="Сгенерировать CNP"/>
+            <Button Content="Сгенерировать CNP" x:Name="GenerationButton" Click="GenerationButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>

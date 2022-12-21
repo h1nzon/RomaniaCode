@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace RomaniaCode
 {
@@ -22,7 +10,24 @@ namespace RomaniaCode
     {
         public MainWindow()
         {
+            string[] readText = null;
             InitializeComponent();
+            string path = "Roman.csv";
+            if (File.Exists(path))
+            {
+                readText = File.ReadAllLines(path);
+            }
+
+            foreach (string item in readText)
+            {
+                string[] line = item.Split(';');
+                string coutryName = line[2].Trim();
+            }
+        }
+
+        private void GenerationButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
